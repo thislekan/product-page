@@ -1,8 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import WebFont from 'webfontloader';
+import App from './components/index';
+import './index.scss';
 import reportWebVitals from './reportWebVitals';
+
+WebFont.load({
+  google: {
+    families: ["Playfair Display:400,500", 'serif', "Assistant:200,300,400, 800", "sans-serif"],
+  },
+});
 
 ReactDOM.render(
   <React.StrictMode>
