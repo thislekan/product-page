@@ -1,5 +1,5 @@
 .filter {
-  height: 24rem;
+  height: 29.7rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -41,5 +41,48 @@
       height: 1.5rem;
       right: 1.25rem;
     }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .filter {
+    height: 25rem;
+    padding: 4rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .filter {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    flex-direction: unset;
+    align-items: center;
+    justify-content: unset;
+    padding: 4rem 10rem;
+    height: 34.4rem;
+
+    &__content {
+      h3 {
+        font-size: 4.8rem;
+      }
+
+      p {
+        font-size: 1.6rem;
+        margin-top: 1.2rem;
+      }
+    }
+
+    &__dropdown {
+      width: 40rem;
+      margin: unset;
+      justify-self: flex-end;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .filter {
+    padding: 4rem calc(50% - 61rem);
   }
 }

@@ -21,6 +21,10 @@
     justify-content: space-between;
     width: 12rem;
 
+    button {
+      display: none;
+    }
+
     &__hamburger {
       display: flex;
       align-items: center;
@@ -88,7 +92,7 @@
         border-radius: 100%;
         cursor: pointer;
         position: absolute;
-        right: 35%;
+        right: 4rem;
         bottom: -0.8rem;
 
         &__arrow {
@@ -96,6 +100,13 @@
           width: 1.2rem;
           transform: rotate(90deg);
         }
+      }
+
+      .logo {
+        margin-right: 4rem;
+        letter-spacing: 0.3rem;
+        font-weight: $heavy;
+        font-size: 1.3rem;
       }
     }
 
@@ -130,6 +141,15 @@
   background-color: #4b5548;
   padding: 3.2rem 2rem;
   color: map-get($colors, brand-white);
+
+  .social-media {
+    padding-top: 1.5rem;
+    a {
+      font-size: 2rem;
+      color: white;
+      margin-right: 1.2rem;
+    }
+  }
 
   &__contact {
     &__text {
@@ -171,8 +191,8 @@
       grid-template-columns: 1fr 1fr;
 
       .sect {
-        // width: 50%;
         margin-bottom: 1.6rem;
+
         &__title {
           font-family: $body-text;
           font-weight: $semi-normal;
@@ -267,5 +287,175 @@
     margin-top: 1.6rem;
     line-height: 2.5rem;
     font-weight: $light;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .footer {
+    padding: 6.4rem 2rem;
+
+    .divider {
+      display: none;
+    }
+
+    &__contact {
+      display: grid;
+      grid-template-columns: 50% auto;
+      grid-column-gap: 3rem;
+
+      &__links {
+        .sect {
+          &__title {
+            &__links {
+              a {
+                font-weight: unset;
+                font-size: unset;
+              }
+            }
+          }
+        }
+      }
+
+      &__text {
+        .heads-up {
+          line-height: 2;
+        }
+      }
+    }
+
+    &__brands,
+    &__terms,
+    &__support {
+      width: 45%;
+    }
+
+    &__support {
+      &__title {
+        font-size: 1.8rem;
+        line-height: unset;
+      }
+
+      &__addresses {
+        p:last-of-type {
+          margin: unset;
+        }
+      }
+    }
+
+    &__brands {
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+      margin: 3rem 0;
+
+      &__copyright {
+        p {
+          line-height: 2;
+          letter-spacing: 0.2rem;
+          font-size: 1.4rem;
+          font-weight: $light;
+        }
+      }
+
+      &__imgs {
+        svg {
+          margin: 0 0.2rem;
+        }
+      }
+    }
+
+    &__terms {
+      justify-content: unset;
+
+      a {
+        margin-right: 1rem;
+        font-weight: $light;
+      }
+    }
+
+    &__office-address {
+      width: 60%;
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .navbar {
+    padding: 1.2rem 4rem;
+
+    &__link-wrapper {
+      .logo {
+        margin-right: 4rem;
+        font-size: 2rem;
+      }
+
+      &__hamburger {
+        display: none;
+      }
+
+      button {
+        display: unset;
+        font-size: 1.4rem;
+        font-weight: $normal;
+        font-family: $body-text;
+        margin-right: 4rem;
+        border: unset;
+        outline: none;
+        transition: 500ms ease;
+        padding: unset;
+        padding-bottom: 0.25rem;
+        background-color: unset;
+
+        &:active {
+          font-weight: $light;
+        }
+      }
+    }
+
+    &__links-div {
+      &--extend {
+        width: 55rem;
+      }
+
+      &__top {
+        .logo {
+          letter-spacing: 1rem;
+          font-weight: $heavy;
+          font-size: unset;
+        }
+      }
+    }
+  }
+
+  .footer {
+    padding: 6.4rem 4rem;
+    &__contact {
+      grid-template-columns: 40% auto;
+      grid-gap: 5rem;
+
+      &__text {
+        width: 40rem;
+
+        .in-touch {
+          font-size: 3rem;
+        }
+
+        .heads-up {
+          font-size: 1.6rem;
+          line-height: 1.7;
+          font-weight: $thin;
+        }
+      }
+
+      &__links {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+
+        .sect {
+          &__title {
+            font-size: 2rem;
+          }
+        }
+      }
+    }
   }
 }

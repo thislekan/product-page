@@ -1,15 +1,24 @@
 import SingleProduct from "./Product";
+import LoaderInterface from "../skeleton";
 
-const arr = [1, 2, 3, 4];
-const AllProducts = (props) => (
-  <div className="products">
-    <div className="products__wrapper">
-      {
-        arr.map(val => (<SingleProduct key={val} />))
-      }
-      
+const AllProducts = (props) => {
+  return (
+    <div className="products">
+      <div className="products__wrapper">
+        {props?.data?.map((obj, index) => {
+          if (props.loading) return <LoaderInterface key={index} />;
+          return (
+            <SingleProduct
+              key={index}
+              info={obj}
+              userCurrency={props.userCurrency}
+              addToCart={props.addToCart}
+            />
+          );
+        })}
+      </div>
     </div>
-  </div>
-)
+  );
+};
 
 export default AllProducts;
