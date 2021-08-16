@@ -4,6 +4,11 @@ import WebFont from 'webfontloader';
 import App from './components/index';
 import './index.scss';
 import reportWebVitals from './reportWebVitals';
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+} from "@apollo/client";
 
 WebFont.load({
   google: {
@@ -11,9 +16,17 @@ WebFont.load({
   },
 });
 
+const client = new ApolloClient({
+  uri: 'https://pangaea-interviews.vercel.app/api/graphql',
+  cache: new InMemoryCache()
+});
+
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ApolloProvider client={client}>
+      <App />
+    </ApolloProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
